@@ -1,0 +1,29 @@
+<div class="container d-flex flex-column">
+  <div class="row align-items-center justify-content-center g-0 min-vh-100">
+    <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+      <!-- Card -->
+      <div class="card shadow">
+        <!-- Card body -->
+        <div class="card-body p-6">
+          <!-- User Info -->
+          <div class="mb-4">
+            <h1 class="mb-1 fw-bold">Profile</h1>
+          </div>
+          <div class="mb-4">
+            <strong>Name:</strong> <%= @user.name %>
+          </div>
+          <div class="mb-4">
+            <strong>Hobby:</strong> <%= @user.hobby %>
+          </div>
+          <div class="mb-4">
+            <strong>Profile:</strong> <%= @user.profile %>
+          </div>
+          <!-- Back Button -->
+          <div class="d-grid pt-3">
+            <%= link_to '戻る', root_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
