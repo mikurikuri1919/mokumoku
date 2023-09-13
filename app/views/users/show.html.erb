@@ -18,6 +18,11 @@
           <div class="mb-4">
             <strong>Profile:</strong> <%= @user.profile %>
           </div>
+          <% if current_user.following?(@user) %>
+            <%= link_to "フォロー外す", user_relationships_path(@user.id), method: :delete %>
+          <% else %>
+            <%= link_to "フォローする", user_relationships_path(@user.id), method: :post %>
+          <% end %>
           <!-- Back Button -->
           <div class="d-grid pt-3">
             <%= link_to '戻る', root_path, class: 'btn btn-primary' %>
