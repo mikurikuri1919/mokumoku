@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :followings, :followers]
+
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def create
@@ -21,13 +22,17 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @user = User.find(params[:id])
     @users = @user.followings
   end
 
   def followers
-    @user = User.find(params[:id])
     @users = @user.followers
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def user_params
